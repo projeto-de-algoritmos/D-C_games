@@ -58,7 +58,7 @@ def calculate_recomendation(user_choices):
     for game in games:
         available_rankings.append(game['characteristics'])
 
-    get_score_from_ranking = {1:6, 2:5, 3:4, 4:3, 5:2, 6:1}
+    get_score_from_ranking = {1:12, 2:10, 3:8, 4:5, 5:2, 6:1}
 
     size_types = 6
     total = {}

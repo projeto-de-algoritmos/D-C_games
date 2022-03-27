@@ -20,7 +20,6 @@ def get_all_games():
 
 @app.route('/recomendation', methods=['POST'])
 def calculate_recomendation():
-    print(request.json)
     return graph.calculate_recomendation(request.json)
 
 if __name__ == "__main__":
