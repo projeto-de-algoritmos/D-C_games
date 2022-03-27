@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import GameCard from './components/GameCard';
 import api from './service/api'
+import ReasultModal from './components/ResultModal';
 
 import * as S from './styles'
 
@@ -9,7 +10,9 @@ const App = () => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedGames, setSelectedGames] = useState([]);
-
+  const [modal, setModal] = useState(false);
+  const [image, setImage] = useState('None');
+  const [description, setDescription] = useState('None');
 
   const selectGame = (game) => {
     if(selectedGames.some((item)=> item.id === game.id)){
@@ -38,9 +41,15 @@ const App = () => {
 
   const getRecomendation = async () => {
     if (selectedGames.length > 0){
-      await api.post('/recomendation', selectedGames)
+      const selectedGamesId = selectedGames.map((n) => {
+        return n['id']
+      })
+
+      await api.post('/recomendation', selectedGamesId)
       .then((response) => {
-        console.log(response.data);
+        setImage(response.data.img);
+        setDescription(response.data.desc);
+        setModal(true)
       })
       .catch((err) => {
         console.log(err);
@@ -56,6 +65,12 @@ const App = () => {
   
   return (
     <S.Wrapper>
+          {modal && <ReasultModal 
+        visible={modal}
+        setVisible={setModal}
+        description={description}
+        image={image}
+      />}
       <S.Header>
         <h1>DC Games</h1>
         <h3>Selecione os jogos que você gosta para receber a sua recomendação</h3>
