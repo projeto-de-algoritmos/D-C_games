@@ -2,6 +2,7 @@
 
 from flask import Flask, request
 from games import games
+import graph
 import sys
 
 app = Flask(__name__)
@@ -12,8 +13,8 @@ def hello():
 
 
 @app.route('/api', methods=['POST'])
-def addrecord(name):
-    return {}
+def calculate_recomendation():
+    return graph.calculate_recomendation(request.json)
 
 if __name__ == "__main__":
     app.run()
