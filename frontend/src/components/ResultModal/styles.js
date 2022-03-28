@@ -40,7 +40,7 @@ export const TitleCloseBtn = styled.div`
 `;
 
 export const Body = styled.div`
-  flex: 50%;
+  flex: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
