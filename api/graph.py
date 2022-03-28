@@ -89,7 +89,7 @@ def calculate_recomendation(user_choices):
         user_preferences_ranking[i] = type_game
 
     answer = 1
-    min_inversions_count = -float("infinity")
+    min_inversions_count = float("infinity")
 
     # check the inversion with each game which were not choosen yet
     for choice in range(len(available_rankings)):
@@ -105,7 +105,7 @@ def calculate_recomendation(user_choices):
         
         inversions_count = mergeSortInversions(stack, 0, len(stack)-1)
         
-        if inversions_count > min_inversions_count:
+        if min_inversions_count > inversions_count:
             min_inversions_count = inversions_count
             answer = choice
 
