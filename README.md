@@ -24,16 +24,16 @@ DC games é um site para recomendar um jogo, baseado no outros jogos que você g
 **Linguagem**: Python e JavaScript<br>
 **Framework**: Flask(backend) e React(frontend)<br>
 
-Para rodar a api é necessário ter o [Python](https://www.python.org/) e o pip instalados e para rodar o frontend é necessário ter o [NodeJS](https://nodejs.org/en/) e o [Yarn](https://yarnpkg.com/) instalados.
+Para rodar a api é necessário ter o [Python 3](https://www.python.org/) e o pip instalados e para rodar o frontend é necessário ter o [NodeJS](https://nodejs.org/en/) e o [Yarn](https://yarnpkg.com/) instalados.
 
 Para rodar a api, entre na pasta da api, dentro da pasta do projeto e rode os seguintes comandos:
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 E depois suba o servidor rodando:
 ```
-python server.py
+python3 server.py
 ```
 
 Para rodar o frontend, entre na pasta frontend, dentro da pasta do projeto e rode os seguintes comandos:
