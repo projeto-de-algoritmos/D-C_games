@@ -48,10 +48,14 @@ yarn start
 
 
 ## Uso 
-Para receber sua recomendação de jogo, basta selecionar o jogos que você curte e clicar em gerar. 
+Para receber sua recomendação de jogo, basta selecionar os jogos que você curte e clicar em gerar. 
 
 ## Outros 
 A recomendação é feita utilizando o algorimo de contagem de inversão, para isso, todos os jogos cadastrados no nosso site tem série de características que são utilizadas para que o algoritmo funcione.
+A partir da série de características dos jogos selecionados é feita uma comparação com todos os outros jogos existentes para montar a recomendação.
+
+
+Cada jogo possui uma série de características que são organizadas por relevância para cada jogo.
 
 ![games1](./doc/games1.png)
 ![games2](./doc/games2.png)
